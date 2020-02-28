@@ -6,8 +6,12 @@ class NotesController < ApplicationController
     @note = Note.new
   end
   def create
-    Note.create(note_params)
-    redirect_to new_note_path
+    @note = Note.new(note_params)
+    if @note.save
+    　redirect_to note_path, notice: "投稿しました"
+    else
+      render :new
+    end
   end
   private
   def note_params
