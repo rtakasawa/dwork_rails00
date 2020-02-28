@@ -6,6 +6,7 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= note.content %></td>
+    <td><%= link_to "投稿内容を編集する", edit_note_path(note.id) %></td>
   </tr>
 <% end %>
 </table>
