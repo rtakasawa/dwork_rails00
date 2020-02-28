@@ -1,2 +1,12 @@
-<h1>Notes#index</h1>
-<p>Find me in app/views/notes/index.html.erb</p>
+<h1>投稿内容一覧</h1>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+<% @notes.each do |note| %>
+  <tr>
+    <td><%= note.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新しくブログを投稿する', new_note_path %>
