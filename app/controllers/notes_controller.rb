@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:edit, :update]
+  before_action :set_note, only: [:edit, :update, :destroy]
   def index
     @notes = Note.all
   end
@@ -22,6 +22,10 @@ class NotesController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @note.destroy
+    redirect_to notes_path, notice:"投稿を削除しました！"
   end
   private
   def note_params

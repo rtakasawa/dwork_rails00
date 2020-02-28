@@ -6,7 +6,8 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= note.content %></td>
-    <td><%= link_to "投稿内容を編集する", edit_note_path(note.id) %></td>
+    <td><%= link_to "投稿を編集する", edit_note_path(note.id) %></td>
+    <td><%= link_to "投稿を削除する", note_path(note.id), method: :delete,data: { confirm: "本当に削除していいですか？" } %></td>
   </tr>
 <% end %>
 </table>
