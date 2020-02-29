@@ -8,10 +8,14 @@ class NotesController < ApplicationController
   end
   def create
     @note = Note.new(note_params)
-    if @note.save
-      redirect_to notes_path, notice: "投稿しました"
-    else
+    if params[:back]
       render :new
+    else
+      if @note.save
+        redirect_to notes_path, notice: "ブログを作成しました！"
+      else
+        render :new
+      end
     end
   end
   def edit
@@ -26,6 +30,10 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     redirect_to notes_path, notice:"投稿を削除しました！"
+  end
+  def confirm
+    @note = Note.new(note_params)
+    render :new if @note.invalid?
   end
   private
   def note_params
