@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>一覧ページ</title>
-  </head>
-  <body>
-    <h2>一覧</h2>
-    <p><%= notice %></p>
-    <table>
-      <tr>
-        <th>内容</th>
-      </tr>
-    <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.content %></td>
-        <td><%= link_to "編集", edit_note_path(note.id) %></td>
-        <td><%= link_to "削除", note_path(note.id), method: :delete,data: { confirm: "本当に削除していいですか？" } %></td>
-      </tr>
-    <% end %>
-    </table>
-    <br><%= link_to '新規投稿する', new_note_path %>
-  </body>
-</html>
+<h2>一覧</h2>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+  <% @notes.each do |note| %>
+    <tr>
+      <td><%= note.content %></td>
+      <td><%= link_to "編集", edit_note_path(note.id) %></td>
+      <td><%= link_to "削除", note_path(note.id), method: :delete,data: { confirm: "本当に削除していいですか？" } %></td>
+    </tr>
+  <% end %>
+</table>
+<br><%= link_to '新規投稿する', new_note_path %>

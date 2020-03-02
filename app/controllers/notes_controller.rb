@@ -12,7 +12,7 @@ class NotesController < ApplicationController
       render :new
     else
       if @note.save
-        redirect_to notes_path, notice: "ブログを作成しました！"
+        redirect_to notes_path, notice: "投稿しました！"
       else
         render :new
       end
