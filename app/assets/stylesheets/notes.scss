@@ -1,3 +1,25 @@
-// Place all the styles related to the notes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  height: 100px;
+  background: url("head.jpeg") center / cover;
+}
+header .title{
+  font-size: 32px;
+  font-weight: bold;
+}
+footer{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px 0;
+  background-color: #B0C4DE;
+  position: fixed;
+  bottom: 0;
+}
+.footer-text {
+  color: #fff;
+}
